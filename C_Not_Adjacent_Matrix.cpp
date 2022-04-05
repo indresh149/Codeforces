@@ -35,39 +35,60 @@ typedef map<ll,ll> mll;
 //Main
 void techboat()
 {
-     int n;
-  cin >> n;
-  if (n == 1) {
-    cout << "1" << endl;
-    return;
-  } else if (n == 2) {
-    cout << "-1" << endl;
-    return;
-  }
-  vector<vector<int>> a(n, vector<int>(n));
-  a[0][0] = 1;
-  a[n - 1][n - 1] = n * n;
-  int x = n * n - 1;
-  for (int i = 1; i + 1 < n; i++) {
-    for (int j = i; j >= 0; j--, x--) {
-      a[i - j][j] = x;
+     int n;cin>>n;
+     if(n == 2)
+     {
+       cout<<-1<<endl;
+        return;
+     }
+     int a[n][n];
+     if(n%2 == 1)
+     {
+       int k = 1;
+       int x = 0;
+       while(k <= (n*n))
+       {
+         int i = x/n;
+         i = i%n;
+         int j = x%n;
+         a[i][j] = k;
+         k++;
+         x += 2;
+       }
+     }
+     else{
+       int k = 1;
+       for(int i = 0;i < n;i++){
+          if(i%2 == 0){
+            for(int j=0;j<n;j+=2)
+            {
+              a[i][j] = k++;
+            }
+          }
+          else
+          {
+            for(int j = 1;j<n;j+=2){
+              a[i][j] = k++;
+            }
+          }
+       }
+        for(int i=0;i<n;i++){
+            if(i%2==1){
+                for(int j=0;j<n;j+=2) a[i][j]=k++;
+            }
+            else{
+                for(int j=1;j<n;j+=2) a[i][j]=k++;
+            }
+        }
     }
-  }
-  x = 2;
-  for (int j = n - 2; j > 0; j--) {
-    for (int i = 0; i < n - j; i++, x++) {
-      a[n - i - 1][j + i] = x;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cout<<a[i][j]<<" ";
+        }
+        cout<<"\n";
     }
-  }
-  for (int i = n - 1; i >= 0; i--, x++) {
-    a[i][n - i - 1] = x;
-  }
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) {
-      cout << a[i][j] << " ";
-    }
-    cout << endl;
-  }
+     
+
 }
 int main()
 {
