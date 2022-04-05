@@ -33,6 +33,47 @@ typedef map<ll,ll> mll;
 //Code by Indresh Goswami
 //Language C++
 //Main
+void techboat()
+{
+    int n,k;
+    cin>>n>>k;
+    if(n == 1)
+    {
+        cout<<k<<" "<<endl;
+        return;
+    }
+    if(n == k)
+    {
+        cout<<1<<endl;
+        return;
+    }
+    if(n < k){
+        int a = k/n;
+        int b = k%n;
+        if(b != 0){
+            a++;
+        }
+        cout<<a<<endl;
+        return;
+
+    }
+    else
+    {
+        int c = n/k;
+        int d = n%k;
+        if(d!= 0){
+            c++;
+        }
+        k = k*c;
+        int a = k/n;
+        int b = k%n;
+        if(b != 0){
+            a++;
+        }
+        cout<<a<<endl;
+        return;
+    }
+}
 int main()
 {
 Code By IG
@@ -40,13 +81,7 @@ ll t;
 cin>>t;
 fl(i,t)
 {
-   ll n, k;
-    cin >> n >> k;
-    
-    long long cf = (n + k - 1) / k;
-    k *= cf;
-    
-    cout << (k + n - 1) / n << endl;
+   techboat();
 }
 return 0;
 }
