@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+// #define IndreshGoswami 1
+//Speed
+#define Code ios_base::sync_with_stdio(false);
+#define By cin.tie(NULL);
+#define IG cout.tie(NULL);
+//Aliases
+using ll= long long;
+using lld= long double;
+using ull= unsigned long long;
+//Constants
+const lld pi= 3.141592653589793238;
+const ll INF= 1e18;
+const ll mod=1e9+7;
+//TypeDEf
+typedef pair<ll, ll> pll;
+typedef vector<ll> vll;
+typedef vector<pll> vpll;
+typedef vector<string> vs;
+typedef unordered_map<ll,ll> umll;
+typedef map<ll,ll> mll;
+// Macros
+#define ff first
+#define ss second
+#define pb push_back
+#define mp make_pair
+#define fl(i,n) for(int i=0;i<n;i++)
+#define rl(i,m,n) for(int i=n;i>=m;i--)
+#define vr(v) v.begin(),v.end():
+#define rv(v) v.end(),v.begin()
+                               
+//Code by Indresh Goswami
+//Language C++
+//Main
+int main()
+{
+Code By IG
+ll t;
+cin>>t;
+fl(i,t)
+{
+ string s;
+ cin>>s;
+ char p;
+ cin>>p;
+ int d =0;
+ vector<int> v;
+ for(int i = 0; i <s.size();i++)
+ {
+      d+=1;
+      if(s[i] == p)
+      {
+          v.push_back(d);
+         d = 0;
+      }
+ }
+ int res =0;
+ for(int i = 0; i < v.size();i++)
+ {
+     if(v[i]%2 != 0){
+         res  += 1;
+     }
+ }
+ if(res>0)
+ {
+     cout<<"YES\n";
+ }
+ else{
+     cout<<"NO\n";
+ }
+}
+return 0;
+}
