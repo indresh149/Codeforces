@@ -40,19 +40,41 @@ ll t;
 cin>>t;
 fl(i,t)
 {
-  vector<int> a(2),b(2),f(2);
-
-  cin>>a[0]>>a[1];
-  cin>>b[0]>>b[1];
-  cin>>f[0]>>f[1];
-
-  int ans = abs(a[0] - b[0]) + abs(a[1] - b[1]);
-  if((a[0] == b[0] && a[0] == f[0] && min(a[1],b[1]) < f[1] && f[1] < max(a[1],b[1])) 
-  || (a[1] == b[1] && a[1] == f[1] && min(a[0],b[0]) < f[0] && f[0] < max(a[0],b[0])))
-  {
-    ans +=2;
-  }
-  cout<<ans<<endl;
+   int n;
+    cin>>n;
+ 
+    int a[n];
+ 
+    for (int i = 0; i < n; i++)
+    {
+        a[i]=i+1;
+    }
+ 
+    if(n%2==0)
+    {
+        for (int i = 0; i < n; i+=2)
+        {
+            swap(a[i],a[i+1]);
+        }
+        
+    }
+    else
+    {
+        for (int i = 0; i < n-1; i += 2)
+        {
+            swap(a[i], a[i + 1]);
+        }
+ 
+        swap(a[n-2],a[n-1]);
+    }
+ 
+    for (int i = 0; i < n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+ 
+    cout<<"\n";
+    
 }
 return 0;
 }

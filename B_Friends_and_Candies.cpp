@@ -33,6 +33,34 @@ typedef map<ll,ll> mll;
 //Code by Indresh Goswami
 //Language C++
 //Main
+void techboat()
+{
+ll n;
+cin>>n;
+int arr[n];
+fl(i,n)
+{
+    cin>>arr[i];
+}
+ int s = 0;
+ fl(i,n){
+     s += arr[i];
+ }
+ if(s%n != 0){
+     cout<<-1<<endl;
+     return;
+ }
+s/= n;
+int res = 0;
+fl(i,n){
+    if(s < arr[i])
+    {
+        res++;
+    }
+}
+cout<<res<<endl;
+
+}
 int main()
 {
 Code By IG
@@ -40,19 +68,7 @@ ll t;
 cin>>t;
 fl(i,t)
 {
-  vector<int> a(2),b(2),f(2);
-
-  cin>>a[0]>>a[1];
-  cin>>b[0]>>b[1];
-  cin>>f[0]>>f[1];
-
-  int ans = abs(a[0] - b[0]) + abs(a[1] - b[1]);
-  if((a[0] == b[0] && a[0] == f[0] && min(a[1],b[1]) < f[1] && f[1] < max(a[1],b[1])) 
-  || (a[1] == b[1] && a[1] == f[1] && min(a[0],b[0]) < f[0] && f[0] < max(a[0],b[0])))
-  {
-    ans +=2;
-  }
-  cout<<ans<<endl;
+techboat();
 }
 return 0;
 }
