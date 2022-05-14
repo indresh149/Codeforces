@@ -94,8 +94,8 @@ int main()
 {
 Code By IG
 ll t;
-cin>>t;
 fl(i,t)
+cin>>t;
 {
  techboat();
 }
