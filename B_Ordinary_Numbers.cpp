@@ -48,22 +48,16 @@ void techboat()
 {
     ll n;
     cin>>n;
-    int res = 0;
-    vector<int> v;
-    for(ll i =1;i<n;i++) {
-    while(i != 0)
-    {
-        int digit = i%10;
-        i=i/10;
-        v.push_back(digit);
+    ll ans = 0;
+    for(int i=1;i<=9;i++){
+        for(ll j = i;j<=n;){
+               ans++;
+               j = (j*10)+i;
+        }
     }
-    if(isordinary(v))
-    {
-        res++;
-    }
-    cout<<res<<endl;
+    cout<<ans<<endl;
 }
-}
+
 
 int main()
 {

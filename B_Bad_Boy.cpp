@@ -40,10 +40,16 @@ ll t;
 cin>>t;
 fl(i,t)
 {
-   int n,m,j,k;
-   cin>>n>>m>>j>>k;
-   cout<<1<<" "<<1<<" "<<n<<" "<<m<<endl;
-
+   int n,m,x,y;
+   cin>>n>>m>>x>>y;
+   if((x == 1 && y == 1) || (x ==n && y == m))
+   {
+   cout<<1<<" "<<m<<" "<<n<<" "<<1<<endl;
+   }
+   else
+   {
+      cout<<1<<" "<<1<<" "<<n<<" "<<m<<endl;
+   }
 }
 return 0;
 }

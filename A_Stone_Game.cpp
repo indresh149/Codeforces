@@ -42,16 +42,36 @@ fl(i,t)
 {
   int n;
   cin>>n;
-  vector<int> v(n);
-   for(int &it: v){
-       cin>>it;
+  
+  int a[n];
+  int ma = INT_MIN;
+  int mi = INT_MAX;
+
+  fl(i,n)
+  {
+    cin>>a[i];
+    ma = max(ma,a[i]);
+    mi = min(mi,a[i]);
+  }
+  int lma,lmi;
+   fl(i,n){
+     if(a[i] == ma){
+       lma = i+1;
+     }
+     if(a[i] == mi)
+     {
+       lmi = i+1;
+     }
    }
-   int maxPos = max_element(v.begin(),v.end())-v.begin();
-   int minPos = min_element(v.begin(),v.end())- v.begin();
-   cout<< min({max(maxPos,minPos) + 1,
-   (n-1) - min(maxPos,minPos)+1,
-   (n-1) - maxPos + minPos + 2,
-   (n-1) - minPos + maxPos + 2})<<endl;
+   int rma = n-lma+1;
+   int rmi = n-lmi+1;
+
+    int a1 = max(rma,rmi);
+    int a2 = max(lma,lmi);
+
+   int a3= min(lma+rmi,rma+lmi);
+    cout<<min(a1,min(a2,a3))<<endl;
+
 }
 return 0;
 }
