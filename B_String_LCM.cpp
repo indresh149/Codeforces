@@ -33,23 +33,46 @@ typedef map<ll,ll> mll;
 //Code by Indresh Goswami
 //Language C++
 //Main
-int main() {
-  auto mul = [](string s, int k) -> string {
-    string res = "";
-    while (k--) res += s;
-    return res;
-  };
-  
-  int tc;
-  cin >> tc;
-  while (tc--) {
-    string s, t;
-    cin >> s >> t;
-    int n = s.length(), m = t.length();
-    int g = __gcd(n, m);
-    if (mul(s, m / g) == mul(t, n / g))
-      cout << mul(s, m / g) << endl;
-    else
-      cout << "-1" << endl;
-  }
+void techboat()
+{
+   string s,t;
+        cin>>s>>t;
+        if(s.size()==t.size()){
+            if(s==t) cout<<s<<"\n";
+            else cout<<-1<<"\n";
+            return;
+        }
+        if(s.size() > t.size()) swap(s,t);
+        int n=s.size();
+        int m=t.size();
+        int l=(n*m)/__gcd(n,m);
+        string ans="";
+        int k=0;
+        for(int i=0;i<l;i++){
+            ans+=(char)s[k];
+            k++;
+            k%=n;
+        }
+        k=0;
+        for(int i=0;i<l;i++){
+            if(ans[i]!=t[k]){
+                cout<<-1<<"\n";
+                return;
+            }
+            k++;
+            k%=m;
+        }
+        cout<<ans<<"\n";
+}
+int main()
+{
+Code By IG
+ll t;
+cin>>t;
+fl(i,t)
+{
+
+techboat();
+}
+return 0;
 }

@@ -40,7 +40,12 @@ ll t;
 cin>>t;
 fl(i,t)
 {
-
+   
+   string s; 
+   cin >> s;
+		if(s[0] != s[s.size()-1])
+		s[0] = s[s.size()-1];
+		cout << s << '\n';
 }
 return 0;
 }

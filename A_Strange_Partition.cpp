@@ -40,7 +40,16 @@ ll t;
 cin>>t;
 fl(i,t)
 {
-
+   ll n,x,a;
+  cin>>n>>x;
+		long long u=0,p=0;
+		  
+		for(long long i=0;i<n;i++){
+			cin>>a;
+			u=u+((a+x-1)/x);
+			p=p+a;
+		}
+		cout<<(p+x-1)/x<<" "<<u<<endl;
 }
 return 0;
 }

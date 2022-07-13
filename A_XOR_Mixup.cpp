@@ -33,40 +33,25 @@ typedef map<ll,ll> mll;
 //Code by Indresh Goswami
 //Language C++
 //Main
-void solve()
-{
-    int n;
-   cin>>n;
-   if(n > 900)
-   {
-       cout<<"Size too big";
-      return;
-   }
-   vector<int> v(n);
-   vector<int> b(n);
-   vector<int> res(n);
-   fl(i,n)
-   {
-       cin>>v[i];
-   }
-   fl(i,n)
-   {
-       cin>>b[i];
-   }
-   fl(i,n)
-   {
-       res[i] = v[i]+b[i];
-   }
-   fl(i,n)
-   {
-       cout<<res[i]<<" ";
-   }
-}
 int main()
 {
 Code By IG
+ll t;
+cin>>t;
+fl(i,t)
+{
 
-   solve();
+ ll n;
+ cin>>n;
 
+ vector<int> v(n);
+
+ fl(i,n)
+ {
+    cin>>v[i];
+
+ }
+ cout<<v[0]<<endl;
+}
 return 0;
 }

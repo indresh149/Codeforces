@@ -41,6 +41,63 @@ cin>>t;
 fl(i,t)
 {
 
+
+ ll n;
+
+ cin>>n;
+
+ vector<int> v(n);
+
+ fl(i,n)
+ {
+    cin>>v[i];
+
+ }
+ map<int,int> idx;
+
+ fl(i,n)
+ {
+
+idx[v[i]] = i;
+ }
+
+ string s;
+ cin>>s;
+
+ set<int> l,dl;
+
+ fl(i,n)
+ {
+   if(s[i] == '0') dl.insert(v[i]);
+
+   else l.insert(v[i]);
+
+ }
+ vector<int> ans(n);
+
+ int x = dl.size();
+ for(int i = 1; i<= x;i++)
+ {
+   auto it = dl.begin();
+
+   ans[idx[*it]] = i;
+   dl.erase(it);
+ }
+
+ for(int i = x+1;i<=n;i++)
+ {
+   auto it = l.begin();
+   ans[idx[*it]] = i;
+   l.erase(it);
+ }
+
+fl(i,n)
+{
+   cout<<ans[i]<<" ";
+}
+cout<<endl;
+
+ 
 }
 return 0;
 }
