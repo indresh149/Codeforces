@@ -42,22 +42,17 @@ fl(i,t)
 {
 ll n;
 
-
 cin>>n;
 
 vector<string> v(n);
 
 map<string,int> mpp;
 
-
-
 set<string> stt;
 
 
 fl(i,n){
     cin>>v[i];
-
-
 
     stt.insert(v[i]);
 
@@ -72,43 +67,26 @@ fl(i,n)
 
 
     string mid,last;
-for(int i=0;i<5;i++){
-    int g = 1;
-   }
+
     fl(j,v[i].size()){
 
 
-for(int i=0;i<5;i++){
-    int g = 1;
-   }
+
         last.clear();
 
-
-
-
-        mid += v[i][j];
+     mid += v[i][j];
 
         for(int h = j+1;h<v[i].size();h++){
 
             last.push_back(v[i][h]);
 
-   for(int i=0;i<5;i++){
-    int g = 1;
-   }
-
-
         }
-
 
 
         if(stt.find(mid) != stt.end() && stt.find(last) != stt.end()){
 
             f = 1;
-for(int i=0;i<5;i++){
-    int g = 1;
-   }
             break;
-
 
         }
     }
@@ -116,9 +94,6 @@ for(int i=0;i<5;i++){
 
     if(f == 1){
         cout<<"1";
-        for(int i=0;i<5;i++){
-    int g = 1;
-   }
     }
     else
     {

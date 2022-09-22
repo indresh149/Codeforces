@@ -36,14 +36,17 @@ typedef map<ll,ll> mll;
 int main()
 {
 Code By IG
-ll t;
-int  a, b, c;
-cin>>t;
-fl(i,t)
-{
-    
-   cin >> a >> b >> c;
-        cout << (a + c) % 2 << '\n';
-}
-return 0;
+   int t, n, x;
+    cin >> t;
+    while (t--) {
+        cin >> n;
+        int cnt0 = 0, cnt1 = 0;
+        for (int i = 1; i <= n; ++i) {
+            cin >> x;
+            if (x == 0) cnt0++;
+            if (x == 1) cnt1++;
+        }
+        cout << (1ll << cnt0) * (ll)cnt1 << '\n';
+    }
+    return 0;
 }

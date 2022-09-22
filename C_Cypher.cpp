@@ -40,6 +40,8 @@ int plusu(int p)
 
     h = p+1;
 
+    h = h + 10;
+
     h = h%10;
 
     return h;

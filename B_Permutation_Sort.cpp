@@ -33,14 +33,11 @@ typedef map<ll,ll> mll;
 //Code by Indresh Goswami
 //Language C++
 //Main
-int main()
-{
-Code By IG
-ll t;
-cin>>t;
-fl(i,t)
-{
-     int n;
+int main() {
+  int t;
+  scanf("%d", &t);
+  while (t--) {
+    int n;
     scanf("%d", &n);
     vector<int> a(n);
     for (int &x : a) scanf("%d", &x);
@@ -52,6 +49,5 @@ fl(i,t)
     else if (a[0] == n && a[n - 1] == 1)
       ans = 3;
     printf("%d\n", ans);
-}
-return 0;
+  }
 }
