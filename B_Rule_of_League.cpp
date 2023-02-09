@@ -106,10 +106,9 @@ void techboat(){
     if((x != 0 && y != 0)  || (x == 0 && y == 0))
     {
 
-        // cout<<"NO"<<endl;
         cout<<-1<<endl;
 
-     return;
+         return;
     }
 
     if(x < y){
@@ -122,12 +121,6 @@ if((n-1)%x == 0){
     ll k = 1;
 
     y = 0;
-
-    // while(k <= n){
-
-    //     cout<<k<<" ";
-    //     k += x;
-    // }
     fl(i,n-1){
 
         if(y == x)

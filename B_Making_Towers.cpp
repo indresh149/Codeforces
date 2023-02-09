@@ -19,28 +19,16 @@ int q;
 
     int a[q + 2];
 
-
-    // fl(i, q + 2)
-    // {
-    //     cin >> a[i];
-    // }
     map<int, vector<int>>mp;
 
-    // fl(i, q + 2)
-    // {
-    //     cin >> a[i];
-    // }
     for(int i = 1; i <= q; i++){
 
         cin >> a[i];
-    //}
+    
         mp[a[i]].push_back(i);
-
-
     }
     int ans[q + 2];
 
-    // fl(i, q + 2)
     memset(ans, 0,sizeof ans);
 
     // fl(i, q + 2)

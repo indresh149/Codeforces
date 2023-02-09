@@ -97,6 +97,104 @@ return S;
 //Code by Indresh Goswami
 //Language C++
 //Main
+
+int end(int w1,int w2,int rem1,int rem2){
+	if(w1>w2 + rem2 || w2>w1 + rem1)
+	{
+		return 1;
+	}
+     else
+	 {
+		return 0;
+	 }
+}
+
+int m1(string s)
+{
+    int w1=0,w2=0,rem1=5,rem2=5;
+    int ans=0;
+    for (int i = 0; i < 10; i++)
+    {
+        if(end(w1,w2,rem1,rem2))
+        {
+            return ans;
+        }
+        if(s[i]=='1' || s[i]=='?')
+        {
+            w1++;
+            rem1--;
+        }
+        else if (s[i] == '0')
+        {
+            rem1--;
+        }
+        ans++;
+        i++;
+        if (end(w1, w2, rem1, rem2))
+        {
+            return ans;
+        }
+ 
+        if (s[i] == '1')
+        {
+            w2++;
+            rem2--;
+        }
+        else if (s[i] == '0' || s[i] == '?')
+        {
+            rem2--;
+        }
+        ans++;
+    }
+ 
+    return 10;
+    
+}
+ 
+int m2(string s)
+{
+    int w1 = 0, w2 = 0, rem1 = 5, rem2 = 5;
+    int ans = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (end(w1, w2, rem1, rem2))
+        {
+            return ans;
+        }
+        //a
+        if (s[i] == '1' )
+        {
+            w1++;
+            rem1--;
+        }
+        else if (s[i] == '0' || s[i] == '?')
+        {
+            rem1--;
+        }
+        ans++;
+ 
+        if (end(w1, w2, rem1, rem2))
+        {
+            return ans;
+        }
+ 
+        i++;
+ 
+        if (s[i] == '1' || s[i] == '?')
+        {
+            w2++;
+            rem2--;
+        }
+        else if (s[i] == '0' )
+        {
+            rem2--;
+        }
+        ans++;
+    }
+ 
+    return 10;
+}
+
 int main()
 {
 Code By IG
@@ -104,22 +202,13 @@ ll t;
 cin>>t;
 while(t--)
 {
+
 string s;
-		cin>>s;
-		int a=0,b=0,c1=0,c2=0,i;
-		for(i=0;i<10;i++){
-			if(s[i]=='1') 
-				if(i%2==0) a++;
-				else b++;
-			if(s[i]=='?')
-				if(i%2==0) c1++;
-				else c2++;
-			if(a+c1>b+(10-i)/2||b+c2>a+(9-i)/2){
-				i++;
-				break;
-			}
-		}
-		cout<<i<<endl;
+cin>>s;
+
+cout<<min(m1(s),m2(s))<<endl;
+
+
 }
 return 0;
 }

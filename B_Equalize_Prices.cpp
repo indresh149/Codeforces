@@ -124,7 +124,9 @@ int mx = *max_element(a,a+n);
 
 if(mx - mn > 2*k)
 {
+
     cout<<-1<<endl;
+
 
 }
 else

@@ -189,7 +189,7 @@ int main()
     //     int g  = 5;
     // }
     cin>>t;
-    for(ll iop=1;iop<=t;iop++)
+    for(ll iop=1;iop<=t;iop++)[]
     {
         // for(int i=0;i<10;i++){
     //     int g  = 5;
